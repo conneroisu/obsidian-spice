@@ -1,10 +1,10 @@
 {
-	"id": "obsidian-svelte-starter",
-	"name": "Svelte Starter",
+	"id": "obsidian-spice",
+	"name": "Obsidian Spice",
 	"version": "1.0.3",
 	"minAppVersion": "0.12.0",
-	"description": "A plugin development template for devs who want to use svelte in Obsidian.",
-	"author": "Quorafind",
-	"authorUrl": "https://obsidian.md",
+	"description": "A circuit simulator plugin for Obsidian's markdown editor, canvas mode, and excalidraw.",
+	"author": "Conner Ohnesorge",
+	"authorUrl": "https://kofi.com/conneroisu",
 	"isDesktopOnly": false
 }

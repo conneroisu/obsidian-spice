@@ -1,8 +1,8 @@
-import path from 'path';
-import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
-import autoPreprocess from 'svelte-preprocess';
 import builtins from 'builtin-modules';
+import path from 'path';
+import autoPreprocess from 'svelte-preprocess';
+import { defineConfig } from 'vite';
 
 const prod = (process.argv[2] === 'production');
 
@@ -22,7 +22,7 @@ export default defineConfig(() => {
                 ignoreTryCatch: false,
             },
             lib: {
-                entry: path.resolve(__dirname, './src/starterIndex.ts'),
+                entry: path.resolve(__dirname, './src/main.ts'),
                 formats: ['cjs'],
             },
             css: {},
