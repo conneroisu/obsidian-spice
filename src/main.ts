@@ -1,6 +1,6 @@
 import { addIcon, Plugin } from 'obsidian';
 
-import { obspicesvg } from './ui/constants/obspicelogo';
+import { obspicesvg } from './ui/assets/obspicelogos';
 import { ObSpiceView } from './ui/interface/ObSpiceView';
 import { DEFAULT_SETTINGS, ObSpiceSettings } from './ui/settings/ObSpiceSettings';
 import { ObSpiceSettingTab } from './ui/settings/ObSpiceSettingTab';

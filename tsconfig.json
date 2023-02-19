@@ -2,7 +2,7 @@
     "compilerOptions": {
         "baseUrl": ".",
         "inlineSources": true,
-        "module": "ESNext",
+        "module": "commonjs",
         "target": "ES6",
         "allowJs": true,
         "noImplicitAny": true,
