@@ -38,5 +38,18 @@ export class ObSpiceSettingTab extends PluginSettingTab {
 		});
 		this.componentsFolderElement = componentFolderLocation.settingEl;
 		new FolderSuggest(this.app, this.inputfolder);
+        new Setting(containerEl)
+            .setName('Debug')
+            .setDesc('Enable debug mode')
+            .addToggle((toggle) => {
+                toggle.setValue(this.plugin.settings.debug)
+                    .onChange(async (value) => {
+                        this.plugin.settings.debug = value;
+                        await this.plugin.saveSettings();
+                        if (value) { console.log('Debug mode enabled'); }
+                    });
+            }
+        );
+        
     }
 }

@@ -1,31 +1,22 @@
 <script>
 	import { createPopper } from '@popperjs/core';
-    import {componentslogo, schematiclogo, simulationlogo } from "../assets/obspicelogos";
   export let items = [];
   export let activeTabValue = 1;
   const handleClick = tabValue => () => (activeTabValue = tabValue);
-  const handleClicked = tabValue => () => {
-    console.log('clicked');
-    activeTabValue = tabValue;
-    // Add an filter to the logo with the label of the tab
-    // document.querySelector('.uilogo').style.filter = 'invert(99%) sepia(99%) saturate(13%) hue-rotate(243deg) brightness(104%) contrast(100%)';
-  };
 </script>
 <ul>
 {#each items as item}
 	<li class={activeTabValue === item.value ? 'active' : 'inactive'}>
         <!-- Show the logo under the tab -->
+        <!-- TODO - need to add a popper popover for describing each tab if user hovers -->
         <!-- if the tab is aactive the logo should be white -->
         {#if activeTabValue == item.value}
-            <span on:click={handleClicked(item.value)}>{item.label}<span class="activeuilogo" on:click={handleClicked(item.value)}>{@html item.logo}</span></span>
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <span on:click={handleClick(item.value)}>{item.label}<span class="activeuilogo" on:click={handleClick(item.value)}>{@html item.logo}</span></span>
         {:else}
-            <span on:click={handleClicked(item.value)}>{item.label}<span class="inactiveuilogo" on:click={handleClicked(item.value)}>{@html item.logo}</span></span>
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <span on:click={handleClick(item.value)}>{item.label}<span class="inactiveuilogo" on:click={handleClick(item.value)}>{@html item.logo}</span></span>
         {/if}
-            <!-- {#if activeTabValue != item.value}
-                <span on:click={handleClicked(item.value)}>{@html item.logo}</span>
-            {:else}
-                <span on:click={handleClick(item.value)}>{item.label}</span>
-            {/if} -->
 	</li>
 {/each}
 </ul>

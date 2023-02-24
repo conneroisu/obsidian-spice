@@ -1,3 +1,32 @@
+
+<script>
+    import Tabs from "./SimTabs.svelte";
+    import Tab1 from "./AC-Analysis-Component.svelte";
+    import Tab2 from "./Transient-Component.svelte";
+    import Tab3 from "./DC-Sweep-Component.svelte";
+let items = [
+    {
+        label: "AC Analysis",
+        value: 1,
+        component: Tab1,
+        slabel: "ac",
+    }, 
+    {
+        label: "Transient Analysis",
+        value: 2,
+        component: Tab2,
+        slabel: "Trans",
+    },
+    {
+        label: "DC Sweep",
+        value: 3,
+        component: Tab3,
+        slabel: "DC"
+    }
+]
+</script>
+
+<Tabs {items} />
 <h2>
 		Now we can have expanded content like this
 </h2>

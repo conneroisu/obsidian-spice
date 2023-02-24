@@ -1,9 +1,11 @@
 <script>
+	import ComponentList from './componentList.svelte';
+    import CSearch from '../data/cSearch.svelte';
 let count = 1;
 </script>
-<h2>
-	And we can have interactive content like this
-</h2>
+<CSearch></CSearch>
+<ComponentList></ComponentList>
+
 <p>
 	The count is: {count}
 </p>

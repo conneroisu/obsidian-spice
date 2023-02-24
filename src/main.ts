@@ -19,7 +19,7 @@ export default class ObSpice extends Plugin {
             VIEW_TYPE,
             (leaf) => (this.view = new ObSpiceView(leaf))
         );
-        const obspicesidebar = this.addRibbonIcon('obspicelogo', 'Obsidian Spice', () => { this.openMapView(); });
+        const obspicesidebar = this.addRibbonIcon('obspicelogo', 'Obsidian Spice', () => { this.openObSpiceView(); });
         obspicesidebar.addClass('obspice-ribbon-icon');
         this.app.workspace.onLayoutReady(this.onLayoutReady.bind(this));
 
@@ -28,7 +28,7 @@ export default class ObSpice extends Plugin {
         this.addCommand({
             id: 'open-obsidian-spice-view',
             name: 'Open Obsidian Spice View',
-            callback: () => this.openMapView(),
+            callback: () => this.openObSpiceView(),
         });
         // This adds a settings tab so the user can configure various aspects of the plugin
         this.addSettingTab(new ObSpiceSettingTab(this.app, this));
@@ -55,7 +55,7 @@ export default class ObSpice extends Plugin {
         await this.saveData(this.settings);
     }
 
-    async openMapView() {
+    async openObSpiceView() {
         const workspace = this.app.workspace;
         workspace.detachLeavesOfType(VIEW_TYPE);
         const leaf = workspace.getRightLeaf(false);

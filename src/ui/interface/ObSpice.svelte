@@ -1,10 +1,10 @@
 <script>
-	import Tab1 from "./SimulationTab.svelte";
-	import Tab2 from "./ComponentTab.svelte";
+	import Componentcard from './Components/ui/componentcard.svelte';
+	import Tab1 from "./Simulation/SimulationTab.svelte";
+	import Tab2 from "./Components/ui/ComponentTab.svelte";
 	import Tab3 from "./SchematicTab.svelte";
   import Tabs from "./Tabs.svelte";
 
-    import sim from '../assets/sim.svg';
     import {componentslogo, schematiclogo, simulationlogo } from "../assets/obspicelogos.ts";
 
   // List of tab items with labels, values and assigned components
@@ -29,5 +29,4 @@
 		}
   ];
 </script>
-
 <Tabs {items} />
