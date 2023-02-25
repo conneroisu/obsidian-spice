@@ -58,7 +58,7 @@ Obsidian Circuit Simulator is licensed under MIT License.
 
 ## Contact
 
-If you have any questions or feedback about Obsidian Circuit Simulator, please contact me at conneroisu@gmail.com or open an issue on [GitHub](https://github.com/conneroisu/obsidian-spice/issues).
+If you have any questions or feedback about Obsidian Circuit Simulator, please contact me at conneroisu@outlook.com or open an issue on [GitHub](https://github.com/conneroisu/obsidian-spice/issues).
 
 
 (2) GitHub - StevenGann/obsidian-circuitjs: Integrating CircuitJS into Obsidian. https://github.com/StevenGann/obsidian-circuitjs Accessed 2/21/2023.
