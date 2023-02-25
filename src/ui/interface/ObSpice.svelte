@@ -3,9 +3,8 @@
 	import Tab1 from "./Simulation/SimulationTab.svelte";
 	import Tab2 from "./Components/ui/ComponentTab.svelte";
 	import Tab3 from "./SchematicTab.svelte";
-  import Tabs from "./Tabs.svelte";
-
-    import {componentslogo, schematiclogo, simulationlogo } from "../assets/obspicelogos.ts";
+	import Tabs from "./Tabs.svelte";
+	import {componentslogo, schematiclogo, simulationlogo } from "../assets/obspicelogos.ts";
 
   // List of tab items with labels, values and assigned components
   let items = [

@@ -7,6 +7,11 @@ import { ObSpiceSettingTab } from './ui/settings/ObSpiceSettingTab';
 
 export const VIEW_TYPE = "svelte-view";
 
+// full comment here 
+/*
+ * This is the main plugin class. It is responsible for registering the plugin, commands, settings, and views.
+ * It also contains the main plugin logic allowing the plugin to interact with Obsidian and it's components/plugins.
+*/
 export default class ObSpice extends Plugin {
     private view: ObSpiceView;
     settings: ObSpiceSettings;

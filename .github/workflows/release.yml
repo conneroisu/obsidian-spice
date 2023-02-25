@@ -1,4 +1,4 @@
-name: Build obsidian plugin
+name: Build, Realease, and Update Repository
 
 on:
   push:
@@ -7,7 +7,8 @@ on:
       - "*" # Push events to matching any tag format, i.e. 1.0, 20.15.10
 
 env:
-  PLUGIN_NAME: text-dataset-aid-plugin # Change this to the name of your plugin-id folder
+  PLUGIN_NAME: obsidian-spice # Change this to the name of your plugin-id folder
+  EXAMPLE_VAULT_NAME: ObSpice Example Vault
 
 jobs:
   build:
@@ -73,11 +74,24 @@ jobs:
           asset_content_type: application/json
           name: Upload styles.css
           id: upload-css
-    #   uses: actions/upload-release-asset@v1
-    #   env:
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #   with:
-    #     upload_url: ${{ steps.create_release.outputs.upload_url }}
-    #     asset_path: ./styles.css
-    #     asset_name: styles.css
-    #     asset_content_type: text/css
+      - name: Upload styles.css
+        id: upload-css
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./styles.css
+          asset_name: styles.css
+          asset_content_type: text/css
+      - name: Update Example Vault 
+        id: update-example-vault
+        run: |
+          echo "Updating example vault for ${{ github.repository }}."
+          sudo apt install git -y
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git clone https://github.com/conneroisu/obsidian-spice.git
+          cd obsidian-spice
+          cp main.js ../
+          touch .hotreload
