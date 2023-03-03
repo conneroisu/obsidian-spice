@@ -2,6 +2,7 @@
 
 # Introduction
 
+[![codebeat badge](https://codebeat.co/badges/50d0ae0a-39c0-4e79-9b79-7655c18cd829)](https://codebeat.co/projects/github-com-conneroisu-hw2-main)
 
 
 # Develop in your style in your favorite place!
