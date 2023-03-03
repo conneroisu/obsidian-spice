@@ -12,7 +12,7 @@ export class ObSpiceView extends ItemView {
     }
 
     getDisplayText(): string {
-        return "Dice Roller";
+        return "Obsidian Spice";
     }
 
     getIcon(): string {

@@ -23,9 +23,10 @@ jobs:
       - name: Build
         id: build
         run: |
-          npm i 
-          npm install fs
-          npm run build --if-present
+          yarn
+          yarn add fs
+          postcss-load-config
+          yarn run build --if-present
           mkdir ${{ env.PLUGIN_NAME }}
           cp main.js manifest.json ${{ env.PLUGIN_NAME }}
           zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
@@ -33,7 +34,7 @@ jobs:
           echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: actions/setup-node
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VERSION: ${{ github.ref }}
@@ -76,7 +77,7 @@ jobs:
           id: upload-css
       - name: Upload styles.css
         id: upload-css
-        uses: actions/upload-release-asset@v1
+        uses: actions/setup-node
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

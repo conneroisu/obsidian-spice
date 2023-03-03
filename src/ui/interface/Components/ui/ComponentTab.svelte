@@ -3,6 +3,7 @@
     import CSearch from '../data/cSearch.svelte';
 let count = 1;
 </script>
+
 <CSearch></CSearch>
 <ComponentList></ComponentList>
 

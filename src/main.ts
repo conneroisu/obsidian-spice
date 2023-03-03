@@ -6,8 +6,6 @@ import { DEFAULT_SETTINGS, ObSpiceSettings } from './ui/settings/ObSpiceSettings
 import { ObSpiceSettingTab } from './ui/settings/ObSpiceSettingTab';
 
 export const VIEW_TYPE = "svelte-view";
-
-// full comment here 
 /*
  * This is the main plugin class. It is responsible for registering the plugin, commands, settings, and views.
  * It also contains the main plugin logic allowing the plugin to interact with Obsidian and it's components/plugins.
@@ -15,8 +13,10 @@ export const VIEW_TYPE = "svelte-view";
 export default class ObSpice extends Plugin {
     private view: ObSpiceView;
     settings: ObSpiceSettings;
+    activeTabValue: number;
 
     async onload() {
+        this.activeTabValue = 0;
         await this.loadSettings();
         addIcon("obspicelogo", obspicesvg);
 
@@ -34,6 +34,16 @@ export default class ObSpice extends Plugin {
             id: 'open-obsidian-spice-view',
             name: 'Open Obsidian Spice View',
             callback: () => this.openObSpiceView(),
+        });
+
+        this.addCommand({
+            id: 'open-obsidian-spice-component-view',
+            name: 'Open Obsidian Spice Component View',
+            callback: () => {
+                this.openObSpiceView();
+                this.activeTabValue = 1;
+            },
+            
         });
         // This adds a settings tab so the user can configure various aspects of the plugin
         this.addSettingTab(new ObSpiceSettingTab(this.app, this));

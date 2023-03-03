@@ -1,8 +1,8 @@
 <script>
 	import Componentcard from './Components/ui/componentcard.svelte';
-	import Tab1 from "./Simulation/SimulationTab.svelte";
+	import Tab1 from "./Simulation/ui/SimulationTab.svelte";
 	import Tab2 from "./Components/ui/ComponentTab.svelte";
-	import Tab3 from "./SchematicTab.svelte";
+	import Tab3 from "./Schematic/SchematicTab.svelte";
 	import Tabs from "./Tabs.svelte";
 	import {componentslogo, schematiclogo, simulationlogo } from "../assets/obspicelogos.ts";
 

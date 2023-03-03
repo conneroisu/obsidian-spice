@@ -1,4 +1,4 @@
-import { circuitComponent } from '../ui/circuits/circuitComponent';
+import { circuitComponent } from '../ui/interface/Components/data/circuitComponent';
 
 test("circuitComponent", () => {
     expect(circuitComponent).toBeDefined();

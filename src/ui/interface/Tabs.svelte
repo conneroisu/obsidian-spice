@@ -1,18 +1,19 @@
 <script>
 	import { createPopper } from '@popperjs/core';
+    import TooltipComponent from './tooltip-Component.svelte';
   export let items = [];
   export let activeTabValue = 1;
-  const handleClick = tabValue => () => (activeTabValue = tabValue);
+  const handleClick = (tabValue) => () => (activeTabValue = tabValue);
+  export function setactiveTabValue(tabValue){
+    activeTabValue = tabValue;
+  }
 </script>
 <ul>
 {#each items as item}
 	<li class={activeTabValue === item.value ? 'active' : 'inactive'}>
-        <!-- Show the logo under the tab -->
-        <!-- TODO - need to add a popper popover for describing each tab if user hovers -->
-        <!-- if the tab is aactive the logo should be white -->
         {#if activeTabValue == item.value}
             <!-- svelte-ignore a11y-click-events-have-key-events -->
-            <span on:click={handleClick(item.value)}>{item.label}<span class="activeuilogo" on:click={handleClick(item.value)}>{@html item.logo}</span></span>
+            <span on:click={handleClick(item.value)}>{item.label} <TooltipComponent>it</TooltipComponent><span class="activeuilogo" on:click={handleClick(item.value)}>{@html item.logo}</span></span>
         {:else}
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <span on:click={handleClick(item.value)}>{item.label}<span class="inactiveuilogo" on:click={handleClick(item.value)}>{@html item.logo}</span></span>
@@ -36,6 +37,7 @@
         width: 2em;
         height: 2em;
         transform: scale(0.15);
+        /*Transform using the filter tool in Figma using the primary color */
         filter: invert(12%) sepia(12%) saturate(309%) hue-rotate(188deg) brightness(94%) contrast(93%);
     }
     .inactiveuilogo{
@@ -50,10 +52,9 @@
     }
 	.box {
 		margin-bottom: 10px;
-		padding: 40px;
 		border: 1px solid #dee2e6;
-    border-radius: 0 0 .5rem .4rem;
-    border-top: 0;
+        border-radius: 0 0 .5rem .4rem;
+        border-top: 0;
 	}
   ul {
     display: flex;
@@ -66,7 +67,7 @@
     li.active {
         width: 7em;
         height: 3em;
-        transform: translate3d(0, -.8em , 0);
+        transform: translate3d(0,0 , 0);
         text-justify: center;
         display: flex;
         justify-content: center;
@@ -75,7 +76,7 @@
     li.inactive {
         width: 7em;
         height: 3em;
-        transform: translate3d(0, -.8em , 0);
+        transform: translate3d(0,0 , 0);
         text-justify: center;
         display: flex;
         justify-content: center;

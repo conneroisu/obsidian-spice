@@ -81,9 +81,11 @@
     },
     "dependencies": {
         "@babel/plugin-syntax-import-assertions": "^7.20.0",
+        "@popperjs/svelte": "^0.1.1",
         "nodemon": "^2.0.20",
         "svelte-add": "^2022.12.0-9.0",
         "svelte-loader": "^3.1.6",
+        "svelte-popper": "^0.1.5",
         "ts-node": "^10.9.1"
     },
     "moduleFileExtensions": [
