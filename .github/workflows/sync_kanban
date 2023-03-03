@@ -1,0 +1,23 @@
+# author: Conner Ohnesorge 
+# Syncronizes the kanban tracking the entirety of the project onto github projects.
+
+name: Add PR to project
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  track_pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get project data
+        env:
+          GITHUB_TOKEN: ${{ secrets.YOUR_TOKEN }}
+          ORGANIZATION: YOUR_ORGANIZATION
+          PROJECT_NUMBER: YOUR_PROJECT_NUMBER
+        run: |
+          echo "incomplete github action"
+        
