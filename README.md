@@ -2,7 +2,7 @@
 
 # Introduction
 
-
+[![codebeat badge](https://codebeat.co/badges/9e9f2d7d-d560-4ce5-b48a-b2ddf9317efd)](https://codebeat.co/projects/github-com-conneroisu-obsidian-spice-master)
 
 # Develop in your style in your favorite place!
 "Code", "Visually Design", and "Draw" your circuit's with the ability to acheive spice quality simulations, components, sub-components, systems, and more. 
