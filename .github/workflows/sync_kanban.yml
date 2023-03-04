@@ -9,6 +9,7 @@ on:
 jobs:
     remove_skills:
         runs-on: ubuntu-latest
+        # Makes the system an ubuntu with the latest distribution
         steps:
         - name: get-skills-
           env:
