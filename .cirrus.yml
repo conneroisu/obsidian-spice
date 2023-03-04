@@ -4,6 +4,6 @@ container:
 check_task:
   node_modules_cache:
     folder: node_modules
-    fingerprint_script: cat yarn.lock
+    fingerprint_script: cat package-lock.json
     populate_script: npm run test
   test_script: npm run test
