@@ -5,7 +5,5 @@ check_task:
   node_modules_cache:
     folder: node_modules
     fingerprint_script: cat package-lock.json
-    populate_script: |
-    npm i
-    npm run build
+    populate_script: npm run built
   test_script: npm run test
