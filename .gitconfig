@@ -1,3 +1,2 @@
 [alias]
-    # pu = git add -A && git add -u && git commit -m "update" + [current date]
-    pu = !git add -A && git add -u && git commit -m "update" && git push
+    pu = !git add -A && git add -u && git commit -m "update" && git push && echo "done full job!"
